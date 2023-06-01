@@ -229,9 +229,11 @@ class ClientController extends Controller
             // 1.2
             if ($request->id_provincia == null) {// 2
                 // 2.1
-                $filtroMontos = Client::select('data.monto', 'e.estado', 'clients.*')
+                $filtroMontos = Client::select('data.*', 'e.estado', 'm.municipio', 'c.ciudad', 'clients.*')
                     ->join('datos as data', 'clients.id_client', '=', 'data.id_cliente')
                     ->join('estados as e', 'clients.id_state', '=', 'e.id_estado')
+                    ->join('municipios as m', 'clients.region', '=', 'm.id_municipio')
+                    ->join('ciudades as c', 'clients.comuna', '=', 'c.id_ciudad')
                     ->whereIdCompany($request->id_cliente)
                     ->whereIdState($request->id_region)
                     ->whereBetween('data.monto', [$request->min, $request->max])
@@ -240,10 +242,11 @@ class ClientController extends Controller
                 // 2.2
                 if ($request->id_comuna == null) { // 3
                     // 3.1
-                    $filtroMontos = Client::select('data.*', 'm.municipio', 'e.estado', 'clients.*')
+                    $filtroMontos = Client::select('data.*', 'm.municipio', 'e.estado', 'clients.*', 'c.ciudad')
                     ->join('datos as data', 'clients.id_client', '=', 'data.id_cliente')
                     ->join('municipios as m', 'clients.region', '=', 'm.id_municipio')
                     ->join('estados as e', 'clients.id_state', '=', 'e.id_estado')
+                    ->join('ciudades as c', 'clients.comuna', '=', 'c.id_ciudad')
                     ->whereIdCompany($request->id_cliente)
                     ->whereRegion($request->id_provincia)
                     ->whereIdState($request->id_region)

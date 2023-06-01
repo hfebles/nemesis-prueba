@@ -9,6 +9,7 @@
 @section('content')
     <div class="row">
         <x-cards>
+        <form>
             <table class="table table-sm table-bordered table-hover mb-0">
                 <thead class="text-white bg-gray-900">
                     <tr>
@@ -17,6 +18,7 @@
                 </thead>
 
                 <tr>
+                    
                     <td class="align-middle mb-0">
                         <select onchange="listaClientes(this.value)" class="form-select" name="opt" id="opt">
                             <option value="">Seleccione</option>
@@ -24,6 +26,9 @@
                                 <option value="{{ $c->id }}">{{ $c->name }}</option>
                             @endforeach
                         </select>
+                    </td>
+                    <td class="align-middle mb-0">
+                        <button class="btn btn-danger" type="button" onclick="location.reload()" name="reset" id="reset">Limpiar</button>
                     </td>
                 </tr>
                 <tr>
@@ -65,7 +70,9 @@
                     <td><input disabled class="form-control" onkeypress="validoNumeros(event)" min="0" max="9999999" type="number" name="max" id="max" /></td>
                     <td><button disabled id='btnConsulta' class="btn btn-success" onclick='consultaMontos();'>Ejecutar</button></td>
                 </tr>
+                
             </table>
+        </form>
         </x-cards>
 
         <div class="col-12 mt-3">
