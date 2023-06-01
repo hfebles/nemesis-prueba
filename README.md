@@ -1,5 +1,12 @@
 # Evaluacion Tecnica para puesto de Frontend Developer
 
+## Desarrollado en: 
+- LARAVEL 8
+- HTML5
+- BOOSTRAP COMO FRAMEWORD DE HTML
+- JAVASCRIPT
+- MYSQL
+
 ## Documentacion de lo realizado: 
 
 1. Se procedio a realizar una revision del documento xlsx enviado con la data de de prueba para la evaluacion
