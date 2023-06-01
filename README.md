@@ -38,6 +38,4 @@
    - filtro por provinicia, al igual que la region, teniendo la empresa cargada iniciamos el filtro por la provincia de la region antes seleccionada.
    - filtros por comuna, al igual que las 2 anteriores filtramos por las comunas de la provincia seleccionada
    - filtro por montos: tenemos un valor minimo y un valor maximo y utilizando el operador `between` de SQL podemos decirle que nos busque en un rago de y hasta lo cual permite que traiga los valores entre los parametros que le asignemos.
-   - filtro por fecha de emision, segun la el rango de fechas asginado al igual que con el monto, podemos obtener los datos desde y hasta segun los parametros introducidos.
-   - filtro por fecha de vencimiento, ejecuta una secuencia de comando como el filtro de fecha de emision, pero esta vez trayendo los valores segun sea la fecha de vencimiento
-        > Cabe destacar que los filtros son operables entre entre ellos dandole dinamismo al filtro.
+       > Cabe destacar que los filtros son operables entre entre ellos dandole dinamismo al filtro.
